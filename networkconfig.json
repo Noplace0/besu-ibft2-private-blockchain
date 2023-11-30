@@ -1,0 +1,26 @@
+{
+    "caliper": {
+        "blockchain": "ethereum",
+        "command" : {
+            "start": "docker-compose -f ./networks/besu/4node-ibft2/docker-compose.yaml up -d && sleep 10",
+            "end" : "docker-compose -f ./networks/besu/4node-ibft2/docker-compose.yaml down"
+          }
+    },
+    "ethereum": {
+        "url": "ws://localhost:8888",
+        "contractDeployerAddress": "0x627306090abaB3A6e1400e9345bC60c78a8BEf57",
+        "contractDeployerAddressPrivateKey": "0xc87509a1c067bbde78beb793e6fa76530b6382a4c0241e5e4a9ec0a0f44dc0d3",
+        "fromAddressSeed": "0x3f841bf589fdf83a521e55d51afddc34fa65351161eead24f064855fc29c9580",
+        "transactionConfirmationBlocks": 2,
+        "contracts": {
+            "MedicalApp": {
+                "path": "./src/besu/medical/MedicalApp.json",
+                "estimateGas": true,
+                "gas": {
+                    "query": 100000,
+                    "transfer": 70000
+                }
+            }
+        }
+    }
+}

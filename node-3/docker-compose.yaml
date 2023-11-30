@@ -1,7 +1,7 @@
 version: "3"
 services:
-  reltime_node:
-    image: hyperledger/besu:22.1.0-RC5-SNAPSHOT
+  node:
+    image: hyperledger/besu:latest
     container_name: "node-3"
     volumes:
       - .:/usr/app/

@@ -16,3 +16,5 @@ metrics-port=9545
 genesis-file="/usr/app/genesis.json" # Path to the custom genesis file
 
 metrics-enabled=true
+min-gas-price=0
+tx-pool-limit-by-account-percentage=1
